@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 21st Birthday, My Love!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ Swiper v11 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body> 
+
+    <audio id="background-music" loop>
+        <source src="lagu-kamu.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="start-screen">
+        <div class="start-content">
+            <h1>A Little Story for You ❤️</h1>
+            <p>Tap the screen and let’s start our journey...</p>
+            <button id="start-button">Start ✨</button>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <section id="hero">
+            <div class="hero-text">
+                <h1>Happy 21st Birthday,</h1>
+                <h2 id="nickname">Michelya!</h2>
+                <p>Today is your special day, and I’ve got something just for you...</p>
+            </div>
+            <div class="scroll-down">Scroll Down 👇</div>
+        </section>
+
+        <section id="gallery">
+            <h2>Our Memories Together</h2>
+            <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/Michel_1.jpg" alt="Memory 1"></div>
+                <div class="swiper-slide"><img src="images/Michel_10.jpg" alt="Memory 2"></div>
+                <div class="swiper-slide"><img src="images/Michel_7.jpg" alt="Memory 3"></div>
+                <div class="swiper-slide"><img src="images/Michel_12.jpg" alt="Memory 4"></div>
+                <div class="swiper-slide"><img src="images/Michel_11.jpg" alt="Memory 5"></div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            </div>
+            <p class="instruction">Foto akan jalan otomatis, kamu juga bisa klik panah 👉 👈</p>
+        </section>
+
+        <section id="timeline">
+            <h2>Our Love Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>5 September 2024</h3>
+                        <p>The day everything started. Happiest day in my life 💕</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>[Special Moment 1]</h3>
+                        <p>Example: “Our first trip to the beach, it was so much fun!”</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>[Special Moment 2]</h3>
+                        <p>Example: “That time we got caught in the rain and laughed while hiding in a little café.”</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game">
+            <h2>Mini Game: Do You Remember?</h2>
+            <div id="quiz-container"></div>
+            <div id="quiz-result"></div>
+        </section>
+
+        <section id="final-message">
+            <h2>For You, [Nama Panggilan Pacar]</h2>
+            <p>Happy 21st birthday, my love. You’re the best thing that ever happened to me. Every single day with you feels like a blessing. I hope all your dreams come true, you stay healthy, and that beautiful smile of yours never fades.</p>
+            <p>Thank you for being the sunshine in my life. I love you, always and forever. 💖</p>
+            <h3>With all my heart,<br>[Your Name]</h3>
+        </section>
+    </div>
+
+    <!-- ✅ Swiper v11 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

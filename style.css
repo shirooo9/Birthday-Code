@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --accent-color: #f1c40f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- Start Screen --- */
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 100;
+    transition: opacity 1s ease-out;
+}
+
+.start-content h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s ease-in;
+}
+
+.start-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in 0.5s;
+    animation-fill-mode: backwards;
+}
+
+#start-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    animation: popIn 1s ease 1s;
+    animation-fill-mode: backwards;
+    transition: transform 0.3s ease;
+}
+
+#start-button:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- General Section Styling --- */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Hero Section --- */
+#hero {
+    /* Ganti 'hero-background.jpg' dengan nama file gambar pacar kamu */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('/images/MIcellll.jpg') center/cover no-repeat;
+    color: white;
+    position: relative; /* Penting untuk animasi */
+    overflow: hidden; /* Pastikan tidak ada yang meluber */
+}
+
+/* Optional: Overlay untuk membuat teks lebih mudah dibaca */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Warna gelap transparan */
+    z-index: 1;
+}
+
+#hero .hero-text {
+    position: relative;
+    z-index: 2; /* Pastikan teks di atas overlay */
+}
+
+#hero h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    animation: slideInDown 1.5s ease;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    animation: slideInUp 1.5s ease;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    animation: fadeIn 2s ease 1s;
+    animation-fill-mode: backwards;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    font-size: 1rem;
+    animation: bounce 2s infinite;
+    z-index: 2; /* Pastikan scroll-down juga di atas overlay */
+}
+
+/* Animasi untuk latar belakang bergerak (opsional, tapi keren!) */
+@keyframes panBackground {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Terapkan animasi latar belakang ke #hero */
+#hero {
+    animation: panBackground 20s infinite alternate ease-in-out;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    #hero h1 { font-size: 2.8rem !important; }
+    #hero h2 { font-size: 1.8rem !important; }
+}
+
+/* --- Gallery Section --- */
+#gallery .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative; /* <-- PERBAIKAN DITAMBAHKAN DI SINI */
+}
+
+#gallery .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+#gallery .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#gallery .instruction {
+    margin-top: 20px;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--secondary-color);
+}
+
+.swiper-slide {
+    transition: opacity 1s ease-in-out; /* efek fade halus */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff; /* tombol putih */
+    font-weight: bold;
+    z-index: 10; /* biar di atas gambar */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #f1c40f; /* berubah kuning pas hover */
+}
+
+
+/* --- Timeline Section --- */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--secondary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    animation: drawLine 2s ease-out;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid var(--secondary-color);
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Game Section --- */
+#quiz-container {
+    width: 90%;
+    max-width: 600px;
+}
+
+.quiz-question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.quiz-options button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quiz-options button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#quiz-result {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* --- Final Message Section --- */
+#final-message {
+    background: var(--primary-color);
+    color: white;
+}
+
+#final-message h2, #final-message h3 {
+    color: var(--accent-color);
+}
+#final-message h2::after {
+    background: var(--accent-color);
+}
+
+#final-message p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* --- Animasi --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+@keyframes slideInUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slideInDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-20px); } 60% { transform: translateY(-10px); } }
+@keyframes drawLine { from { height: 0; } to { height: 100%; } }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 1.8rem !important; }
+    
+    .timeline-container::after { left: 15px; }
+    .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; }
+    .timeline-item:nth-child(even) { left: 0%; }
+    .timeline-dot { left: 5px; }
+    .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot {
+        right: auto;
+        left: 5px;
+    }
+}
