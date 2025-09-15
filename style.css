@@ -42,6 +42,11 @@ h1, h2, h3 {
     transition: opacity 1s ease-out;
 }
 
+#start-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .start-content h1 {
     font-size: 3rem;
     animation: fadeIn 2s ease-in;
@@ -74,6 +79,13 @@ h1, h2, h3 {
 
 .hidden {
     display: none;
+}
+
+/* --- Main Content Fix --- */
+#main-content {
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease-out;
 }
 
 /* --- General Section Styling --- */
@@ -114,14 +126,12 @@ section h2::after {
 
 /* --- Hero Section --- */
 #hero {
-    /* Ganti 'hero-background.jpg' dengan nama file gambar pacar kamu */
     background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('/images/MIcellll.jpg') center/cover no-repeat;
     color: white;
-    position: relative; /* Penting untuk animasi */
-    overflow: hidden; /* Pastikan tidak ada yang meluber */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Optional: Overlay untuk membuat teks lebih mudah dibaca */
 #hero::before {
     content: '';
     position: absolute;
@@ -129,13 +139,13 @@ section h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Warna gelap transparan */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
 #hero .hero-text {
     position: relative;
-    z-index: 2; /* Pastikan teks di atas overlay */
+    z-index: 2;
 }
 
 #hero h1 {
@@ -162,22 +172,19 @@ section h2::after {
     bottom: 30px;
     font-size: 1rem;
     animation: bounce 2s infinite;
-    z-index: 2; /* Pastikan scroll-down juga di atas overlay */
+    z-index: 2;
 }
 
-/* Animasi untuk latar belakang bergerak (opsional, tapi keren!) */
 @keyframes panBackground {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 0%; }
 }
 
-/* Terapkan animasi latar belakang ke #hero */
 #hero {
     animation: panBackground 20s infinite alternate ease-in-out;
 }
 
-/* Responsive adjustment for smaller screens */
 @media (max-width: 768px) {
     #hero h1 { font-size: 2.8rem !important; }
     #hero h2 { font-size: 1.8rem !important; }
@@ -188,7 +195,7 @@ section h2::after {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
-    position: relative; /* <-- PERBAIKAN DITAMBAHKAN DI SINI */
+    position: relative;
 }
 
 #gallery .swiper-slide {
@@ -216,26 +223,24 @@ section h2::after {
 
 .swiper-pagination-bullet {
     background-color: var(--secondary-color);
+    width: 14px;
+    height: 14px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
 }
 
-.swiper-slide {
-    transition: opacity 1s ease-in-out; /* efek fade halus */
+.swiper-pagination-bullet-active {
+    background-color: var(--accent-color);
+    transform: scale(1.2);
+    opacity: 1;
 }
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: #fff; /* tombol putih */
-    font-weight: bold;
-    z-index: 10; /* biar di atas gambar */
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    color: #f1c40f; /* berubah kuning pas hover */
-}
-
 
 /* --- Timeline Section --- */
+#timeline {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    padding: 60px 20px;
+}
+
 .timeline-container {
     position: relative;
     max-width: 800px;

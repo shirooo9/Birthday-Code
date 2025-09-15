@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     const startButton = document.getElementById('start-button');
     const startScreen = document.getElementById('start-screen');
     const mainContent = document.getElementById('main-content');
@@ -7,14 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mulai Interaksi
     startButton.addEventListener('click', () => {
-        startScreen.style.opacity = '0';
+        // Tambah class fade-out (transparan + klik mati)
+        startScreen.classList.add('fade-out');
+
         setTimeout(() => {
-            startScreen.classList.add('hidden');
+            startScreen.classList.add('hidden'); // beneran ilang
             mainContent.classList.remove('hidden');
             mainContent.style.opacity = '1';
         }, 1000);
 
-        // Putar musik (memerlukan interaksi pengguna)
+        // Putar musik (butuh interaksi pengguna)
         backgroundMusic.play().catch(error => {
             console.log("Autoplay was prevented. User needs to interact with the page first.");
         });
@@ -23,27 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inisialisasi Swiper untuk Galeri
     var swiper = new Swiper('.swiper', {
         loop: true,
-        effect: 'fade', // ✅ transisi fade
-        fadeEffect: {
-            crossFade: true,
-        },
+        effect: 'fade',
+        fadeEffect: { crossFade: true },
         autoplay: {
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false,
-            pauseOnMouseEnter: false,
         },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+        }
     });
 
     swiper.autoplay.start();
-
 
     // Animasi saat Scroll
     const sections = document.querySelectorAll('section');
@@ -111,13 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadQuiz();
     }
 
-
-
     function showResult() {
         quizContainer.innerHTML = '';
         let resultText = '';
         if (score === quizData.length) {
-            resultText = `Hebat! Kamu benar semua (${score}/${quizData.length}). Kamu memang paling a-ingat semuanya! ❤️`;
+            resultText = `Hebat! Kamu benar semua (${score}/${quizData.length}). Kamu memang paling ingat semuanya! ❤️`;
         } else if (score > 0) {
             resultText = `Kamu benar ${score} dari ${quizData.length} pertanyaan. Not bad, kamu masih ingat kenangan kita! 😉`;
         } else {
