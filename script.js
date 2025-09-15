@@ -108,9 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
     sections.forEach(section => observer.observe(section));
 
-    // =====================================================
-    //                🎂 Whack-a-Cake Game (loop until win)
-    // =====================================================
+
+    // Whack-a-Cake Game
     const holes = document.querySelectorAll('.hole');
     const cakes = document.querySelectorAll('.cake');
     const scoreBoard = document.getElementById('score');
