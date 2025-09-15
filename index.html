@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body> 
-
+    <button id="music-toggle">🔊</button>
     <audio id="background-music" loop>
         <source src="song\SpotiDown.App - Tersenyum_ Untuk Siapa_ - Hivi_.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -36,20 +36,26 @@
             <h2>Hall of Memories</h2>
             <div class="swiper">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/Michel_16.png" alt="Memory 2"></div>
+                    <div class="swiper-slide"><img src="images/Michel_2.jpg" alt="Memory 3"></div>
                     <div class="swiper-slide"><img src="images/Michel_1.jpg" alt="Memory 1"></div>
-                    <div class="swiper-slide"><img src="images/Michel_10.jpg" alt="Memory 2"></div>
-                    <div class="swiper-slide"><img src="images/Michel_7.jpg" alt="Memory 3"></div>
-                    <div class="swiper-slide"><img src="images/Michel_12.jpg" alt="Memory 4"></div>
-                    <div class="swiper-slide"><img src="images/Michel_14.png" alt="Memory 5"></div>
-                    <div class="swiper-slide"><img src="images/Michel_11.jpg" alt="Memory 6"></div>
-                    <div class="swiper-slide"><img src="images/Michel_13.jpg" alt="Memory 7"></div>
+                    <div class="swiper-slide"><img src="images/Michel_10.jpg" alt="Memory 4"></div>
+                    <div class="swiper-slide"><img src="images/Michel_7.jpg" alt="Memory 5"></div>
+                    <div class="swiper-slide"><img src="images/Michel_12.jpg" alt="Memory 6"></div>
+                    <div class="swiper-slide"><img src="images/Michel_17.jpg" alt="Memory 7"></div>
+                    <div class="swiper-slide"><img src="images/Michel_15.jpg" alt="Memory 8"></div>
+                    <div class="swiper-slide"><img src="images/Michel_14.png" alt="Memory 9"></div>
+                    <div class="swiper-slide"><img src="images/Michel_11.jpg" alt="Memory 10"></div>
+                    <div class="swiper-slide"><img src="images/Michel_13.jpg" alt="Memory 11"></div>
                 </div>
 
                 <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
             <p class="instruction">Kenangan lucu kamuuu and kita mwehehehehe</p>
         </section>
-
+      
         <section id="timeline">
             <h2>Our Love Journey</h2>
             <div class="timeline-container">
@@ -78,21 +84,46 @@
         </section>
 
         <section id="game">
-            <h2>Mini Game: Do You Remember?</h2>
-            <div id="quiz-container"></div>
-            <div id="quiz-result"></div>
+            <h2>Mini Game: Smash the Cake 🎂</h2>
+            <div id="game-container">
+                <div class="hole"><img src="game/cake.png" class="cake hidden"></div>
+                <div class="hole"><img src="game/cake.png" class="cake hidden"></div>
+                <div class="hole"><img src="game/cake.png" class="cake hidden"></div>
+                <div class="hole"><img src="game/cake.png" class="cake hidden"></div>
+                <div class="hole"><img src="game/cake.png" class="cake hidden"></div>
+                <div class="hole"><img src="game/cake.png" class="cake hidden"></div>
+            </div>
+            <div id="score">Score: 0</div>
+
+            <!-- 🎉 Popup Celebration -->
+            <div id="popup" class="hidden">
+                <div class="popup-content">
+                    <h3>🎉 Horeee, kamu menang sayang! 🎉</h3>
+                    <img src="images/Michel_18.jpg" alt="Birthday" class="popup-img">
+                    <p>You’re the sweetest gift in my life ❤️</p>
+                </div>
+            </div>
         </section>
 
         <section id="final-message">
-            <h2>For You, Michelya</h2>
-            <p>Happy 21st birthday, my love. You’re the best thing that ever happened to me. Every single day with you feels like a blessing. I hope all your dreams come true, you stay healthy, and that beautiful smile of yours never fades.</p>
-            <p>Thank you for being the sunshine in my life. I love you, always and forever. 💖</p>
-            <h3>With all my heart,<br>Imam</h3>
+            <!-- Video Background -->
+            <video autoplay muted loop playsinline id="bg-video">
+                <source src="video/last-bg.mp4" type="video/mp4">
+                Browser kamu tidak mendukung video background.
+            </video>
+
+            <div class="final-content">
+                <h2>For You, Michelya</h2>
+                <p>Happy 21st birthday, my love. You’re the best thing that ever happened to me. Every single day with you feels like a blessing. I hope all your dreams come true, you stay healthy, and that beautiful smile of yours never fades.</p>
+                <p>Thank you for being the sunshine in my life. I love you, always and forever. 💖</p>
+                <h3>With all my heart,<br>Imam</h3>
+            </div>
         </section>
+
     </div>
 
-    <!-- ✅ Swiper v11 -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
