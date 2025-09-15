@@ -83,9 +83,14 @@ h1, h2, h3 {
 
 /* --- Main Content Fix --- */
 #main-content {
-    display: block;
-    opacity: 0;
-    transition: opacity 1s ease-out;
+    scroll-snap-type: y mandatory; /* Snap per scroll arah vertical */
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+#main-content section {
+    scroll-snap-align: start; /* tiap section mulai dari atas */
+    height: 100vh;           /* full layar */
 }
 
 /* --- General Section Styling --- */
